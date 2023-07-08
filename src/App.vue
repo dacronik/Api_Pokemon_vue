@@ -1,26 +1,47 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="hero">
+    <video autoplay loop muted playsinline="" class="video-pokemon">
+      <source src="./assets/videos/pokemon_animado.mp4">
+    </video>
+    <div class="flex justify-center nav">
+      <img alt="Vue logo" src="./assets/img/pokemon.png">
+    </div>
+    <div class="container mx-auto px-4 sm:flex-col sm:shrink-0">
+      <pokemones/>
+    </div>
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Pokemones from "@/components/Pokemones.vue"
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    'pokemones': Pokemones
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+.nav{
+  background-color: transparent;
+  
+}
+
+
+.video-pokemon{
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  object-fit: cover;
+  z-index: -1;
+  
+}
+@media screen and (max-width: 320px){
+  .video-pokemon{
+    width: 100%;
+    height: 100vh;
+  }
 }
 </style>
