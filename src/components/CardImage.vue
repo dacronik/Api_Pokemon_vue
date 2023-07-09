@@ -2,7 +2,7 @@
   <div class="w-full max-w-sm text-center backdrop-contrast-50 bg-tranparent border border-violet-600 rounded-lg shadow-lg shadow-indigo-950 dark:border-purple-950">
     <div class="p-5">
         <a href="#">
-            <h4 class="mb-2 text-3xl font-bold tracking-tight text-gray-900 dark:text-white">#{{ pokemon.id }} {{ pokemon.name }}</h4>
+            <h4 class="mb-2 text-3xl font-bold tracking-tight text-gray-900 dark:text-white">#{{ pokemon.id }} {{ capitalized(pokemon.name) }}</h4>
         </a>
         
     </div>
@@ -36,9 +36,8 @@ export default {
     }
   },
   //data: function(){},
-  computed:{
-
-  },
+  
+  //computed:{},
   methods:{
     typeTraslate(typePokemon){
       const diccionario ={
@@ -62,7 +61,13 @@ export default {
       'fairy':{type:'Hada', color:'bg-fuchsia-400'}
       }
       return diccionario[typePokemon]
-    }
+    },
+    capitalized(name) {
+      const capitalizedFirst = name[0].toUpperCase();
+      const rest = name.slice(1);
+
+      return capitalizedFirst + rest;
+    },
   }
   //   for(item of lista){
   //     item_es=diccionario[item]
