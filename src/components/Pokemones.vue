@@ -1,7 +1,7 @@
 <template>
     <div>
         <buscador @buscarPokemon="setNamePokemon"/>
-        <div class="container flex sm:columns-auto justify-center gap-9 mt-16 " v-if="pokemonName !== ''">
+        <div class="container sm:flex md:flex-row justify-center gap-9 mt-16" v-if="pokemonName !== ''">
             <card-image :pokemon="pokemonInfo"/>
             <card-habilidad :pokemon="pokemonInfo"/>
         </div>
@@ -18,7 +18,7 @@ export default {
     // props: {},
     data: function(){
         return {
-            pokemonName:'',
+            pokemonName:'25',
             pokemonInfo: {
                 id:'',
                 name:'',
@@ -66,11 +66,14 @@ export default {
     // mixins: [],
     // filters: {},
     // -- Lifecycle Methods
-
+    created(){
+        this.getPokemon()
+    }
     // -- End Lifecycle Methods
 }
 </script>
 
 <style scoped>
+   
     
 </style>

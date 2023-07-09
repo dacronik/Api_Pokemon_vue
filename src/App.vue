@@ -1,6 +1,6 @@
 <template>
   <div class="hero">
-    <video autoplay loop muted playsinline="" class="video-pokemon">
+    <video autoplay loop muted playsinline="" class="video-pokemon object-cover">
       <source src="./assets/videos/pokemon_animado.mp4">
     </video>
     <div class="flex justify-center nav">
@@ -34,14 +34,8 @@ export default {
   width: 100%;
   height: 100vh;
   position: absolute;
-  object-fit: cover;
   z-index: -1;
   
 }
-@media screen and (max-width: 320px){
-  .video-pokemon{
-    width: 100%;
-    height: 100vh;
-  }
-}
+
 </style>

@@ -7,7 +7,7 @@
         
     </div>
     <div class="flex justify-center">
-      <img class="rounded-t-lg " :src="pokemon.sprites.front_default" alt="pokemon-image"/>
+      <img class="rounded-t-lg w-40" :src="pokemon.sprites.front_default" alt="pokemon-image"/>
     </div>
     
     <div class="flex p-5 gap-8 justify-center">
